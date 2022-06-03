@@ -12,25 +12,37 @@ que procesan secuencias.
 """
 
 
-def suma(notas):
+def sacar_comas(secuencia):
+    """ Esta funcion quita comas y espacios de un string
+    Precondicion: ingresar un string
+    Postcondicion: devuelve una lista de caracteres
+    """
+    secuencia = secuencia.replace(",", "")
+    secuencia = secuencia.replace(" ", "")
+    return list(secuencia)
+
+
+def sumar(notas):
     suma = 0
+    notas = sacar_comas(notas)
     rango = len(notas)
     i = 0
     while i < rango:
         notas[i] = int(notas[i])
+        notas[i] = float(notas[i])
         suma = suma + notas[i]
         i = i + 1
     return suma
 
 
-def promedio(notas):
+def promediar(notas):
     digitos = len(notas)
-    notas = suma(notas)
+    notas = sumar(notas)
     promedio = notas / digitos
     return promedio
 
 
-def maximos(notas):
+#def maximos(notas):
     
     
 
@@ -40,9 +52,10 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del
     ejercicio (La entrada, la llamada al algoritmo y la salida)
     """
-    numeros = int(input("Ingrese una lista"))
-    invocacion = suma(numeros)
-    print(f" Es el {numeros} par? : {invocacion}")
+    numeros = input("Ingrese una lista")
+    suma = sumar(numeros)
+    promedios = promediar(numeros)
+    print(f" promedios {promedios} , suma{suma}")
 
 
 if __name__ == "__main__":
