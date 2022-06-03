@@ -21,21 +21,28 @@ Indicar en lugar de la cantidad de caracteres superpuestos, la posicion
 de inicio de la superposición.
 """
 
-cadena = "Hola Mundo"
-otra_cadena = "Hola"
-lista_uno = list(cadena)
-lista_dos = list(otra_cadena)
-if lista_uno < lista_dos:
-    rango = len(lista_uno)
-else:
-    rango = len(lista_dos)
-i = 0
-car = []
-while i < rango:
-    if lista_uno[i] == lista_dos[i]:
-        car.append(lista_uno[i])
+
+def superposicion(cadena, otra_cadena):
+    lista_uno = list(cadena)
+    lista_dos = list(otra_cadena)
+    listas = [lista_uno] + [lista_dos]
+    if lista_uno > lista_dos:
+        columnas = len(lista_uno)
+    else:
+        columnas = len(lista_dos)
+    filas = len(listas)
+    i = 0
+    grado = 0
+    n = 0
+    while i < columnas:
+        while n < len(lista_dos):
+            if listas[0][i] == listas[1][n]:
+                grado = grado + 1
+            n = n + 1
         i = i + 1
-print(car)
+        n = 0
+    return grado
+
 
     
 
