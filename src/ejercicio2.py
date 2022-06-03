@@ -12,24 +12,31 @@ que procesan secuencias.
 """
 
 
-def sacar_comas(secuencia):
+def acondicionar_secuencia(secuencia):
     """ Esta funcion quita comas y espacios de un string
     Precondicion: ingresar un string
     Postcondicion: devuelve una lista de caracteres
     """
     secuencia = secuencia.replace(",", "")
     secuencia = secuencia.replace(" ", "")
-    return list(secuencia)
+    secuencia = list(secuencia)
+    rango = len(secuencia)
+    i = 0
+    while i < rango:
+        secuencia[i] = int(secuencia[i])
+        secuencia[i] = float(secuencia[i])
+        i = i + 1
+    return secuencia
 
 
 def sumar(notas):
     suma = 0
-    notas = sacar_comas(notas)
+    notas = acondicionar_secuencia(notas)
     rango = len(notas)
     i = 0
     while i < rango:
-        notas[i] = int(notas[i])
-        notas[i] = float(notas[i])
+#        notas[i] = int(notas[i])
+#        notas[i] = float(notas[i])
         suma = suma + notas[i]
         i = i + 1
     return suma
@@ -42,11 +49,28 @@ def promediar(notas):
     return promedio
 
 
-#def maximos(notas):
-    
-    
+def maximos(notas):
+    notas = sacar_comas(notas)
+    rango = len(notas)
+    i = 0
+    maximo = 0
+    while i < rango:
+        if notas[i] > maximo:
+            maximo = notas[i]
+        i = i + 1
+    return maximo
 
 
+def minimos(notas):
+    notas = acondicionar_secuencia(notas)
+    rango = len(notas)
+    i = 0
+    while i < rango:
+        if notas[i] < notas[-i]:
+            minimo = notas[i]
+        i = i + 1
+    return minimo
+        
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del
