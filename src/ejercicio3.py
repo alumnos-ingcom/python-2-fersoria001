@@ -45,9 +45,8 @@ def superposicion(lista, otra_lista):
             i = i + 1    
         else:
             i = i + 1
-    minimos = es_minimo(car)
-    maximo = es_maximo(car)
-    return grado,minimos,maximo
+    posicion = es_minimo(car)
+    return posicion
 
 
 def principal():
@@ -58,7 +57,7 @@ def principal():
     listas = list(input("ingrese lista"))
     otra = list(input("ingrese otra lista"))
     superpuestos = superposicion(listas, otra)
-    print(f"grado,inicio,final {superpuestos}")
+    print(f"Posicion de inicio de superposicion")
     
 if __name__ == "__main__":
     principal()
