@@ -22,14 +22,16 @@ de inicio de la superposición.
 """
 
 
-def superposicion(cadena, otra_cadena):
-    lista_uno = list(cadena)
-    lista_dos = list(otra_cadena)
-    listas = [lista_uno] + [lista_dos]
-    if lista_uno > lista_dos:
-        columnas = len(lista_uno)
+def superposicion(lista, otra_lista):
+    if lista > otra_lista:
+        lista_uno = lista
+        lista_dos = otra_lista
+        columnas = len(lista)
     else:
-        columnas = len(lista_dos)
+        lista_uno = otra_lista
+        lista_dos = lista
+        columnas = len(otra_lista)
+    listas = [lista_uno] + [lista_dos]
     i = 0
     grado = 0
     n = 0
@@ -48,15 +50,14 @@ def superposicion(cadena, otra_cadena):
     return grado,minimos,maximo
 
 
-
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva'
     del ejercicio (La entrada, la llamada al algoritmo y la salida)
     """
-    cadena = input("ingrese cadena")
-    otra = input("ingrese otra cadena")
-    superpuestos = superposicion(cadena, otra)
+    listas = list(input("ingrese lista"))
+    otra = list(input("ingrese otra lista"))
+    superpuestos = superposicion(listas, otra)
     print(f"grado,inicio,final {superpuestos}")
     
 if __name__ == "__main__":
