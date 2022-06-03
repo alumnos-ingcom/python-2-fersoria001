@@ -5,8 +5,9 @@
 
 """
 ### 3. Súper-puestos
-Desarrollar una función que indique el grado de superposición entre dos listas.
-Siendo 0 sin superposición y uno para cada elemento superpuesto.
+Desarrollar una función que indique el grado de superposición entre
+dos listas.Siendo 0 sin superposición y uno para cada elemento
+superpuesto.
 ```python
 ['H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o']
 ```
@@ -20,28 +21,29 @@ Indicar en lugar de la cantidad de caracteres superpuestos, la posicion
 de inicio de la superposición.
 """
 
-
-def superposicion(cadena, otra_cadena):
-    cadena = list(cadena)
-    otra_cadena = list(otra_cadena)
-    if len(cadena) > len(otra_cadena):
-        rango = len(cadena)
-    else:
-        rango = len(otra_cadena)  
-    i = 0
-    grado = 0
-    while i < rango: 
-        if cadena[i] == otra_cadena[i]:
-            grado = grado + 1
+cadena = "Hola Mundo"
+otra_cadena = "Hola"
+lista_uno = list(cadena)
+lista_dos = list(otra_cadena)
+if lista_uno < lista_dos:
+    rango = len(lista_uno)
+else:
+    rango = len(lista_dos)
+i = 0
+car = []
+while i < rango:
+    if lista_uno[i] == lista_dos[i]:
+        car.append(lista_uno[i])
         i = i + 1
-    return grado
+print(car)
+
     
 
 
 def principal():
     """
-    Esta función es la que se encarga de la parte 'interactiva' del ejercicio
-    (La entrada, la llamada al algoritmo y la salida)
+    Esta función es la que se encarga de la parte 'interactiva'
+    del ejercicio (La entrada, la llamada al algoritmo y la salida)
     """
     cadena = input("ingrese cadena")
     otra = input("ingrese otra cadena")
