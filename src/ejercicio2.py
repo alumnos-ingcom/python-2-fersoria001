@@ -55,12 +55,18 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del
     ejercicio (La entrada, la llamada al algoritmo y la salida)
     """
-    numeros = input("ingrese digitos separados por comas o espacios")
-    invocacion_uno = promediar(numeros)
-    invocacion_dos = es_minimo(numeros)
-    invocacion_tres = es_maximo(numeros)
-    tupla = (invocacion_uno, invocacion_dos, invocacion_tres)
-    print(f" promedios, max,min : {tupla}")
+    notas = []
+    i = int(input("Cuantos valores tiene su secuencia de numeros?: "))
+    while i  > 0:
+        numero = float(input("ingrese un numero: "))
+        notas.append(numero)
+        i  = i - 1
+    suma = sumar(notas)
+    promedio = promediar(notas)
+    mayor = es_maximo(notas)
+    menor = es_minimo(notas)
+    print(f"suma, promedio, mayor, menor {(suma, promedio, mayor, menor)}")
+    
 
 
 if __name__ == "__main__":
