@@ -16,8 +16,12 @@ def es_par(numero):
     Precondición: Debe ingresar un numero tipo int
     Postcondicion: Se retorna un valor booleano.
     """
-    while numero >= 2:
-        numero = numero - 2
+    if numero > 0:
+        while numero >= 2:
+            numero = numero - 2
+    else:
+        while numero <= -2:
+            numero = numero + 2
     par = numero == 0
     return par
 
