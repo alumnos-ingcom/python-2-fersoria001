@@ -49,8 +49,8 @@ def promediar(notas):
     return promedio
 
 
-def maximos(notas):
-    notas = sacar_comas(notas)
+def es_maximo(notas):
+    notas = acondicionar_secuencia(notas)
     rango = len(notas)
     i = 0
     maximo = 0
@@ -61,12 +61,13 @@ def maximos(notas):
     return maximo
 
 
-def minimos(notas):
+def es_minimo(notas):
     notas = acondicionar_secuencia(notas)
     rango = len(notas)
     i = 0
+    minimo = notas[0]
     while i < rango:
-        if notas[i] < notas[-i]:
+        if notas[i] < minimo:
             minimo = notas[i]
         i = i + 1
     return minimo
@@ -76,12 +77,13 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del
     ejercicio (La entrada, la llamada al algoritmo y la salida)
     """
-    numeros = input("Ingrese una lista")
-    suma = sumar(numeros)
-    promedios = promediar(numeros)
-    print(f" promedios {promedios} , suma{suma}")
+    numeros = input("ingrese digitos separados por comas o espacios")
+    invocacion_uno = promediar(numeros)
+    invocacion_dos = es_minimo(numeros)
+    invocacion_tres = es_maximo(numeros)
+    tupla = (invocacion_uno, invocacion_dos, invocacion_tres)
+    print(f" promedios, max,min : {tupla}")
 
 
 if __name__ == "__main__":
     principal()
-
