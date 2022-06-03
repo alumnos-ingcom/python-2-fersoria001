@@ -12,31 +12,11 @@ que procesan secuencias.
 """
 
 
-def acondicionar_secuencia(secuencia):
-    """ Esta funcion quita comas y espacios de un string
-    Precondicion: ingresar un string
-    Postcondicion: devuelve una lista de caracteres
-    """
-    secuencia = secuencia.replace(",", "")
-    secuencia = secuencia.replace(" ", "")
-    secuencia = list(secuencia)
-    rango = len(secuencia)
-    i = 0
-    while i < rango:
-        secuencia[i] = int(secuencia[i])
-        secuencia[i] = float(secuencia[i])
-        i = i + 1
-    return secuencia
-
-
 def sumar(notas):
     suma = 0
-    notas = acondicionar_secuencia(notas)
-    rango = len(notas)
     i = 0
+    rango = len(notas)
     while i < rango:
-#        notas[i] = int(notas[i])
-#        notas[i] = float(notas[i])
         suma = suma + notas[i]
         i = i + 1
     return suma
@@ -50,7 +30,6 @@ def promediar(notas):
 
 
 def es_maximo(notas):
-    notas = acondicionar_secuencia(notas)
     rango = len(notas)
     i = 0
     maximo = 0
@@ -62,7 +41,6 @@ def es_maximo(notas):
 
 
 def es_minimo(notas):
-    notas = acondicionar_secuencia(notas)
     rango = len(notas)
     i = 0
     minimo = notas[0]
