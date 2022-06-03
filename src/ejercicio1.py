@@ -1,5 +1,5 @@
 ################
-# Nombre - @usuario_github
+# Fernando Agustín Soria - @fersoria001
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
@@ -16,19 +16,20 @@ def es_par(numero):
     Precondición: Debe ingresar un numero tipo int
     Postcondicion: Se retorna un valor booleano.
     """
-    while numero > 2:
+    while numero >= 2:
         numero = numero - 2
-    return numero > 0
+    par = numero == 0
+    return par
 
 
 def principal():
     """
-    Esta función es la que se encarga de la parte 'interactiva' del ejercicio
-    (La entrada, la llamada al algoritmo y la salida)
+    Esta función es la que se encarga de la parte 'interactiva' del
+    ejercicio (La entrada, la llamada al algoritmo y la salida)
     """
     numeros = int(input("Ingrese un numero entero"))
     invocacion = es_par(numeros)
-    print(f' Es el {numero} par? : {invocacion}}')
+    print(f" Es el {numeros} par? : {invocacion}")
 
 
 if __name__ == "__main__":
