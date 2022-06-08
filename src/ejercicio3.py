@@ -2,7 +2,6 @@
 # Fernando Agustín Soria - @fersoria001
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-from ejercicio2 import es_minimo, es_maximo
 """
 ### 3. Súper-puestos
 Desarrollar una función que indique el grado de superposición entre
@@ -24,29 +23,28 @@ de inicio de la superposición.
 
 def superposicion(lista, otra_lista):
     if lista > otra_lista:
-        lista_uno = lista
-        lista_dos = otra_lista
-        columnas = len(lista)
+        lista_mayor = lista
+        lista_menor = otra_lista
     else:
-        lista_uno = otra_lista
-        lista_dos = lista
-        columnas = len(otra_lista)
-    listas = [lista_uno] + [lista_dos]
+        lista_mayor = otra_lista
+        lista_menor = lista
+    columnas = len(lista_mayor)
+    listas = [lista_mayor] + [lista_menor]
     i = 0
     grado = 0
     n = 0
     car = []
-    n = 0
-    while n < len(lista_dos) and i < columnas:
+    while n < len(lista_menor) and i < columnas:
         if listas[0][i] == listas[1][n]:
             grado = grado + 1
             car.append(i)
             n = n + 1
             i = i + 1    
         else:
+            grado = 0
             i = i + 1
-    posicion = es_minimo(car)
-    return posicion
+    inicio = car[0]
+    return grado, inicio
 
 
 def principal():
@@ -57,7 +55,7 @@ def principal():
     listas = list(input("ingrese lista"))
     otra = list(input("ingrese otra lista"))
     superpuestos = superposicion(listas, otra)
-    print(f"Posicion de inicio de superposicion")
+    print(superpuestos)
     
 if __name__ == "__main__":
     principal()
