@@ -1,5 +1,5 @@
 ################
-# Nombre - @usuario_github
+# Fernando Agustín Soria - @fesoria001
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
