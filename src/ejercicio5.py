@@ -33,24 +33,13 @@ llaves y corchetes.
 """
 
 def balanceados(cadena, tipo):
-    corchetes =  {"[", "]"}
-    parentesis = {"(", ")"}
-    llaves = {"{", "}"}
-#    columnas = list()
+    simbolo = list()
+    for car in tipo:
+        simbolo.append(car)
     temporal = list()
-    if tipo == 1:
-        for car in cadena:
-            if car in corchetes:
-                temporal.append(car)
-    elif tipo == 2:
-        for car in cadena:
-            if car in parentesis:
-                temporal.append(car)
-    elif tipo == 3:
-        for car in cadena:
-            if car in llaves:
-                temporal.append(car)
-#    else:
+    for car in cadena:
+        if car in simbolo:
+            temporal.append(car)
     resultado = len(temporal) % 2 == 0
     return resultado
 
@@ -60,9 +49,9 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    simbolo = int(input("Verif (1) corchetes, (2) parentesis, (3) llaves"))
+    simbolos = input("Ingrese el par de simbolos a comprobar")
     entrada = list(input("Ingrese una cadena"))
-    invoco = balanceados(entrada, simbolo)
+    invoco = balanceados(entrada, simbolos)
     print(invoco)
 
 
