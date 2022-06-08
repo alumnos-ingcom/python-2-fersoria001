@@ -32,15 +32,21 @@ Hacer que la función verifique el balanceo simultaneo de parentesis,
 llaves y corchetes.
 """
 
-def balanceados(cadena, tipo):
-    simbolo = list()
-    for car in tipo:
-        simbolo.append(car)
-    temporal = list()
-    for car in cadena:
-        if car in simbolo:
-            temporal.append(car)
-    resultado = len(temporal) % 2 == 0
+def balanceados(cadena, simbolos):
+    pares = simbolos.split(', ')
+    temporal = []
+    parcial = []
+    resultado = False
+    for i in range(len(pares)):
+        simbolo = pares[i].split(' ')
+        for caracter in cadena:
+            if caracter in simbolo:
+                temporal.append(caracter)
+        parcial.append(temporal)
+    for c in range(len(parcial)):
+        verifico = len(parcial[c]) % 2 == 0
+    if verifico is True:
+        resultado = verifico
     return resultado
 
 
@@ -49,7 +55,9 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    simbolos = input("Ingrese el par de simbolos a comprobar")
+    simbolos = input("Ingrese los signos separados por espacios y"
+                                     "las parejas separadas por coma espacio"
+                     ",deje el final en blanco sin espacios")
     entrada = list(input("Ingrese una cadena"))
     invoco = balanceados(entrada, simbolos)
     print(invoco)
