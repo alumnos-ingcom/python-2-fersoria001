@@ -1,13 +1,12 @@
+"""
+Aqui se probaran las funciones correspondientes al ejercicio2
+comparando resultados con funciones internas en lo posible.
+"""
 ################
 # Fernando Agustín Soria - @fersoria001
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 from practica.ejercicio2 import sumar, promediar, es_maximo, es_minimo
-
-"""
-Aqui se probaran las funciones correspondientes al ejercicio2
-comparando resultados con funciones internas en lo posible.
-"""
 
 
 def test_sumar():
@@ -18,7 +17,7 @@ def test_sumar():
     secuencia = [1,2,10,15]
     prueba = sumar(secuencia)
     interno = sum(secuencia)
-    assert type(prueba) == float, "Tipo incorrecto de resultado"
+    assert isinstance(prueba, float), "Tipo incorrecto de resultado"
     assert prueba == interno, "Suma incorrecta"
 
 
@@ -30,7 +29,7 @@ def test_promediar():
     secuencia = [15,62,-2]
     prueba = promediar(secuencia)
     interno = sum(secuencia) / len(secuencia)
-    assert type(prueba) == float, "Requerimos resultado con decimales"
+    assert isinstance(prueba, float), "Requerimos resultado con decimales"
     assert prueba == interno, "Resultado incorrecto"
 
 

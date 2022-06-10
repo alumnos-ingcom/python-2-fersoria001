@@ -6,6 +6,7 @@ deberia funcionar correctamente
 # Fernando Agustín Soria - @fersoria001
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
+
 from practica.ejercicio1 import es_par
 
 

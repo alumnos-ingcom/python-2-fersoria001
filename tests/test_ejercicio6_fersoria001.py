@@ -2,13 +2,11 @@
 # Fernando Agustín Soria - @fersoria001
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-
-from practica.ejercicio6 import cifrado_del_cesar, descifrado_del_cesar
-
 """
 En este archivo se probará la función que cifra y la que descifra en
 cifrado del cesar perteneciente al ejercicio6
 """
+from practica.ejercicio6 import cifrado_del_cesar, descifrado_del_cesar
 
 
 def test_cifrado_del_cesar_rot13():

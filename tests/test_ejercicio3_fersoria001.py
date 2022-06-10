@@ -1,15 +1,13 @@
+"""
+Se probara si el superposicionador puede devolver el grado de
+superposicion de dos listas y su posicion de inicio de superposicion
+"""
 ################
 # Fernando Agustín Soria - @fersoria001
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
 from practica.ejercicio3 import superposicion
-
-"""
-Se probara si el superposicionador puede devolver el grado de
-superposicion de dos listas y su posicion de inicio de superposicion
-"""
-
 
 def test_superposicion_true_uno():
     """

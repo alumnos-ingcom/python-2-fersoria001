@@ -2,13 +2,11 @@
 # Fernando Agustín Soria - @fersoria001
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-
-from practica.ejercicio5 import balanceados
-
 """
 Se probará en este archivo la funcion para comprobar si una cadena
 de simbolos esta balanceada o no
 """
+from practica.ejercicio5 import balanceados
 
 
 def test_balanceados_corchetes_true():
