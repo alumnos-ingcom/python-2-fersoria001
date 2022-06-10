@@ -18,8 +18,8 @@ def test_balanceados_corchetes_true():
     cadena = "[ ] [] [] ]["
     simbolos = "[]"
     llamo = balanceados(cadena, simbolos)
-    assert llamo == True, "Resultado incorrecto"
-    assert type(llamo) == bool, "Tipo de resultado incorrecto"
+    assert llamo is True, "Resultado incorrecto"
+    assert isinstance(llamo, bool), "Tipo de resultado incorrecto"
 
 
 def test_balanceados_corchetes_false():
@@ -29,8 +29,8 @@ def test_balanceados_corchetes_false():
     cadena = "[ ] ] []]"
     simbolos = "[]"
     llamo = balanceados(cadena, simbolos)
-    assert llamo == False, "Resultado incorrecto"
-    assert type(llamo) == bool, "Tipo de resultado incorrecto"
+    assert llamo is False, "Resultado incorrecto"
+    assert isinstance(llamo, bool), "Tipo de resultado incorrecto"
 
 
 def test_balanceados_parentesis_false():
@@ -41,8 +41,8 @@ def test_balanceados_parentesis_false():
     cadena = "( ) (() )("
     simbolos = "()"
     llamo = balanceados(cadena, simbolos)
-    assert llamo == False, "Resultado incorrecto"
-    assert type(llamo) == bool, "Tipo de resultado incorrecto"
+    assert llamo is False, "Resultado incorrecto"
+    assert isinstance(llamo, bool), "Tipo de resultado incorrecto"
 
 
 def test_balanceados_parentesis_true():
@@ -53,8 +53,8 @@ def test_balanceados_parentesis_true():
     cadena = "( ) (() )()"
     simbolos = "()"
     llamo = balanceados(cadena, simbolos)
-    assert llamo == True, "Resultado incorrecto"
-    assert type(llamo) == bool, "Tipo de resultado incorrecto"
+    assert llamo is True, "Resultado incorrecto"
+    assert isinstance(llamo, bool), "Tipo de resultado incorrecto"
 
 
 def test_balanceados_todos_true():
@@ -65,8 +65,8 @@ def test_balanceados_todos_true():
     cadena = "( ) (() )() [][] ]] [[ { } {{}} }{"
     simbolos = "()[]{}"
     llamo = balanceados(cadena, simbolos)
-    assert llamo == True, "Resultado incorrecto"
-    assert type(llamo) == bool, "Tipo de resultado incorrecto"
+    assert llamo is True, "Resultado incorrecto"
+    assert isinstance(llamo, bool), "Tipo de resultado incorrecto"
 
 def test_balanceados_todos_false():
     """
@@ -76,5 +76,5 @@ def test_balanceados_todos_false():
     cadena = "( ) (() )() [][] ]] [[ { } {{}} }"
     simbolos = "()[]{}"
     llamo = balanceados(cadena, simbolos)
-    assert llamo == False, "Resultado incorrecto"
-    assert type(llamo) == bool, "Tipo de resultado incorrecto"
+    assert llamo is False, "Resultado incorrecto"
+    assert isinstance(llamo, bool), "Tipo de resultado incorrecto"
