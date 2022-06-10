@@ -55,12 +55,18 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    simbolos = input("Ingrese los signos separados por espacios y"
+    try:
+        simbolos = input("Ingrese los signos separados por espacios y"
                                      "las parejas separadas por coma espacio"
-                     ",deje el final en blanco sin espacios")
-    entrada = list(input("Ingrese una cadena"))
-    invoco = balanceados(entrada, simbolos)
-    print(invoco)
+                                    ",deje el final en blanco sin espacios")
+        entrada = list(input("Ingrese una cadena para analizar"))
+        pares = simbolos.split(' ')
+        if len(pares) <= 1:
+            raise IndexError("No utilizó la separación recomendada")
+        invoco = balanceados(entrada, simbolos)
+        print(invoco)
+    except IndexError as exc:
+        print(exc)
 
 
 if __name__ == "__main__":
