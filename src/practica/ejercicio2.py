@@ -74,7 +74,8 @@ def es_minimo(notas):
     except TypeError as excep:
         print("No ingresó una cadena de numeros: ", excep)
     return minimo
-        
+
+
 def principal():
     """
     Esta función es la que se encarga de la parte 'interactiva' del
@@ -88,9 +89,8 @@ def principal():
         mayor = es_maximo(notas)
         menor = es_minimo(notas)
     except ValueError as exc:
-        ("Ingrese una secuencia de numeros separados")
+        print("Ingrese una secuencia de numeros separados", exc)
     print(f"suma, promedio, mayor, menor {(suma, promedio, mayor, menor)}")
-    
 
 
 if __name__ == "__main__":

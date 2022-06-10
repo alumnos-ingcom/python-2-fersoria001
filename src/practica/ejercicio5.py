@@ -5,10 +5,10 @@
 
 """
 ### 5. Corchetes balanceados
-Implementar una función que determine si una cadena con corchetes 
+Implementar una función que determine si una cadena con corchetes
 está balanceada.
 
-Es decir, si cada corchete que abre, tiene su par que cierra. 
+Es decir, si cada corchete que abre, tiene su par que cierra.
 El resultado debe ser un valor lógico indicando si esta o no balanceado.
 
 **Ejemplos**
@@ -24,15 +24,21 @@ El resultado debe ser un valor lógico indicando si esta o no balanceado.
 La funcion deberia de ignorar todo lo que no sean corchetes.
 
 #### Extra #1
-Hacer que la funcion reciba _que_ par de simbolos buscar si esta 
+Hacer que la funcion reciba _que_ par de simbolos buscar si esta
 balanceado. (como para pasar parentesis, llaves o cualquier otro)
 
 #### Extra #2
-Hacer que la función verifique el balanceo simultaneo de parentesis, 
+Hacer que la función verifique el balanceo simultaneo de parentesis,
 llaves y corchetes.
 """
 
 def balanceados(cadena, signos):
+    """ Esta funcion comprueba si los signos tienen su reciproco
+    Precondiciones: Ingresar una cadena de texto y un par o mas de signos
+    , estos ultimos sin separacion.
+    Postcondiciones: Se devuelve un valor booleano True si estan todos
+    los signos encuentran su reciproco y False si no.
+    """
     simbolos = list()
     comparo = list()
     temporal = list()
@@ -60,7 +66,6 @@ def principal():
     entrada = input("Ingrese una cadena para analizar")
     invoco = balanceados(entrada, simbolos)
     print(invoco)
-    print(exc)
 
 
 if __name__ == "__main__":
