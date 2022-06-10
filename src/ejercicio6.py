@@ -28,11 +28,13 @@ decodificar un texto y compararlo con lo que fué ingresado originalmente.
 **Tip**: Implementar las funciones utilizando las funciones `ord` y `chr`.
 """
 
-def cifrado_del_cesar(cadena):
+def cifrado_del_cesar(cadena, rotaciones = 13):
     """ Esta funcion se encarga de codificar una cadena de texto
-    rotando el alfabeto 13 posiciones hacia adelante:
+    rotando el alfabeto n posiciones hacia adelante:
     Precondiciones: Ingresar una cadena de texto
-    Postcondiciones: Se regresa una cadena rotando codificada"""
+    Postcondiciones: Se regresa una cadena rotando codificada
+    13 rotaciones por defecto por defecto
+    , las rotaciones son ajustables en el segundo argumento"""
     alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     alfabeto_min = "abcdefghijklmnopqrstuvwxyz"
     rango_alfabeto= len(alfabeto)
@@ -50,15 +52,16 @@ def cifrado_del_cesar(cadena):
         if letra.islower():
             alfa = alfabeto_min
             limite = 97
-        posicion = (unicode - limite + 13) % rango_alfabeto
+        posicion = (unicode - limite + rotaciones) % rango_alfabeto
         cifrado = cifrado + alfa[posicion]
     return cifrado
 
 
-def descifrado_del_cesar(cadena):
-        """ Esta funcion se encarga de decodificar una cadena de texto
-    rotando el alfabeto 13 posiciones hacia atras:
-    Precondiciones: Ingresar una cadena de texto codificada en cesarROT13
+def descifrado_del_cesar(cadena, rotaciones = 13):
+    """ Esta funcion se encarga de decodificar una cadena de texto
+    rotando el alfabeto n posiciones hacia atras:
+    Precondiciones: Ingresar una cadena de texto codificada en cesarROT13,
+    por defecto, las rotaciones son ajustables en el segundo argumento.
     Postcondiciones: Se regresa una cadena decodificada"""
     alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     alfabeto_min = "abcdefghijklmnopqrstuvwxyz"
@@ -77,7 +80,7 @@ def descifrado_del_cesar(cadena):
         if letra.islower():
             alfa = alfabeto_min
             limite = 97
-        posicion = (unicode - limite - 13) % rango_alfabeto
+        posicion = (unicode - limite - rotaciones) % rango_alfabeto
         descifrado = descifrado + alfa[posicion]
     return descifrado
         
