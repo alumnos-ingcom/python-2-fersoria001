@@ -43,7 +43,11 @@ def superposicion(lista, otra_lista):
         else:
             grado = 0
             i = i + 1
-    inicio = car[0]
+    try:
+        inicio = car[0]
+    except IndexError as exc:
+        print("No hay superposicion")
+        inicio = None
     return grado, inicio
 
 
