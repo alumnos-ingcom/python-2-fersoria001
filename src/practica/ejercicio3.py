@@ -22,6 +22,10 @@ de inicio de la superposición.
 
 
 def superposicion(lista, otra_lista):
+    """ Esta función compara dos listas e indica si estan superpuestas.
+    Precondiciones: Ingresar dos listas
+    Postcondiciones: Se devuelve una tupla con el grado de superposicion
+    y la posicion de inicio de la misma"""
     if lista > otra_lista:
         lista_mayor = lista
         lista_menor = otra_lista
@@ -32,21 +36,21 @@ def superposicion(lista, otra_lista):
     listas = [lista_mayor] + [lista_menor]
     i = 0
     grado = 0
-    n = 0
+    j = 0
     car = []
-    while n < len(lista_menor) and i < columnas:
-        if listas[0][i] == listas[1][n]:
+    while j < len(lista_menor) and i < columnas:
+        if listas[0][i] == listas[1][j]:
             grado = grado + 1
             car.append(i)
-            n = n + 1
-            i = i + 1    
+            j = j + 1
+            i = i + 1
         else:
             grado = 0
             i = i + 1
     try:
         inicio = car[0]
     except IndexError as exc:
-        print("No hay superposicion")
+        print("No hay superposicion", exc)
         inicio = None
     return grado, inicio
 
@@ -60,6 +64,5 @@ def principal():
     otra = list(input("ingrese otra lista"))
     superpuestos = superposicion(listas, otra)
     print(superpuestos)
-    
 if __name__ == "__main__":
     principal()

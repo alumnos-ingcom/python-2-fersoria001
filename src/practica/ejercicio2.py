@@ -13,6 +13,10 @@ que procesan secuencias.
 
 
 def sumar(notas):
+    """ Esta funcion se encarga de sumar una secuencia de numeros
+    Precondiciones : Ingresar una lista de numeros
+    Postcondiciones : se devuelve un numero float.
+    """
     suma = 0
     i = 0
     rango = len(notas)
@@ -27,6 +31,9 @@ def sumar(notas):
 
 
 def promediar(notas):
+    """ Esta funcion obtiene el promedio de una secuencia de numeros
+    Precondiciones: Ingresar una lista de numeros
+    Postcondiciones: Se devuelve un numero float."""
     digitos = len(notas)
     notas = sumar(notas)
     promedio = notas / digitos
@@ -34,6 +41,10 @@ def promediar(notas):
 
 
 def es_maximo(notas):
+    """ Esta funcion averigua el mayor numero de una secuencia.
+    Precondiciones: Ingresar una lista de numeros
+    Postcondiciones: Devuelve el mayor numero de la lista.
+    """
     rango = len(notas)
     i = 0
     maximo = 0
@@ -48,6 +59,10 @@ def es_maximo(notas):
 
 
 def es_minimo(notas):
+    """ Esta funcion averigua el menor numero de una secuencia.
+    Precondiciones: Ingresar una lista de numeros
+    Postcondiciones: Devuelve el menor numero de la lista.
+    """
     rango = len(notas)
     i = 0
     minimo = notas[0]
