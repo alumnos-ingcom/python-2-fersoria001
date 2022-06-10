@@ -32,21 +32,22 @@ Hacer que la función verifique el balanceo simultaneo de parentesis,
 llaves y corchetes.
 """
 
-def balanceados(cadena, simbolos):
-    pares = simbolos.split(', ')
-    temporal = []
-    parcial = []
-    resultado = False
-    for i in range(len(pares)):
-        simbolo = pares[i].split(' ')
-        for caracter in cadena:
-            if caracter in simbolo:
-                temporal.append(caracter)
-        parcial.append(temporal)
-    for c in range(len(parcial)):
-        verifico = len(parcial[c]) % 2 == 0
-    if verifico is True:
-        resultado = verifico
+def balanceados(cadena, signos):
+    simbolos = list()
+    comparo = list()
+    temporal = list()
+    for signo in signos:
+        simbolos.append(signo)
+    for i in range(len(simbolos)):
+        for letra in cadena:
+            if letra in simbolos[i]:
+                temporal.append(letra)
+        comparo.append(temporal)
+        temporal = []
+    rango = len(comparo)
+    for i in range(rango):
+        for j in range(i+1, rango):
+            resultado = len(comparo[i]) == len(comparo[j])
     return resultado
 
 
@@ -55,18 +56,11 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del ejercicio
     (La entrada, la llamada al algoritmo y la salida)
     """
-    try:
-        simbolos = input("Ingrese los signos separados por espacios y"
-                                     "las parejas separadas por coma espacio"
-                                    ",deje el final en blanco sin espacios")
-        entrada = list(input("Ingrese una cadena para analizar"))
-        pares = simbolos.split(' ')
-        if len(pares) <= 1:
-            raise IndexError("No utilizó la separación recomendada")
-        invoco = balanceados(entrada, simbolos)
-        print(invoco)
-    except IndexError as exc:
-        print(exc)
+    simbolos = input("ingrese parejas de signos sin ninguna separacion")
+    entrada = input("Ingrese una cadena para analizar")
+    invoco = balanceados(entrada, simbolos)
+    print(invoco)
+    print(exc)
 
 
 if __name__ == "__main__":
