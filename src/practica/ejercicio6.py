@@ -5,24 +5,24 @@
 
 """
 ### 6. El Cifrado del Cesar
-El cifrado César o cifrado de rotación usa una encriptación de 
-sustitución simple. Esto significa que cada caracter se sustituye 
-por otro caracter de acuerdo con un sistema especifico. 
+El cifrado César o cifrado de rotación usa una encriptación de
+sustitución simple. Esto significa que cada caracter se sustituye
+por otro caracter de acuerdo con un sistema especifico.
 
-La codificación debe ser tal que la palabra codificada contenga 
-unicamente caracteres del tipo AZaz y 0 a 9, de manera que al 
+La codificación debe ser tal que la palabra codificada contenga
+unicamente caracteres del tipo AZaz y 0 a 9, de manera que al
 codificar las ultimas letras del abecedario se vuelva a las primeras letras.
 
-**Por ejemplo**, el método conocido y muy utilizado ROT13 rota 
+**Por ejemplo**, el método conocido y muy utilizado ROT13 rota
 el alfabeto con 13 posiciones, resultando en A->N, B->O... Y->L y Z->M.
 
-* Implementar una funcion que codifique un texto rotandolo 
+* Implementar una funcion que codifique un texto rotandolo
 una cantidad de posiciones ajustable.
 
-* Implementar la funcion que decodifique el texto rotado una 
+* Implementar la funcion que decodifique el texto rotado una
 cantidad de posiciones ajustable.
 
-Una buena forma para verificar este ejercicio es codificar y 
+Una buena forma para verificar este ejercicio es codificar y
 decodificar un texto y compararlo con lo que fué ingresado originalmente.
 
 **Tip**: Implementar las funciones utilizando las funciones `ord` y `chr`.
@@ -83,7 +83,7 @@ def descifrado_del_cesar(cadena, rotaciones = 13):
         posicion = (unicode - limite - rotaciones) % rango_alfabeto
         descifrado = descifrado + alfa[posicion]
     return descifrado
-        
+
 
 def principal():
     """
