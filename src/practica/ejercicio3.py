@@ -26,7 +26,7 @@ def superposicion(lista, otra_lista):
     Precondiciones: Ingresar dos listas
     Postcondiciones: Se devuelve una tupla con el grado de superposicion
     y la posicion de inicio de la misma"""
-    if lista > otra_lista:
+    if len(lista) > len(otra_lista):
         lista_mayor = lista
         lista_menor = otra_lista
     else:
@@ -38,7 +38,7 @@ def superposicion(lista, otra_lista):
     grado = 0
     j = 0
     car = []
-    while j < len(lista_menor) and i < columnas:
+    while i < columnas:
         if listas[0][i] == listas[1][j]:
             grado = grado + 1
             car.append(i)
@@ -47,6 +47,7 @@ def superposicion(lista, otra_lista):
         else:
             grado = 0
             i = i + 1
+            j = 0
     try:
         inicio = car[0]
     except IndexError as exc:
