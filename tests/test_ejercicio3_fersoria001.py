@@ -9,6 +9,7 @@ superposicion de dos listas y su posicion de inicio de superposicion
 
 from practica.ejercicio3 import superposicion
 
+
 def test_superposicion_true_uno():
     """
     Se otorgan dos listas con valores arbitrarios de superposicion
@@ -46,6 +47,7 @@ def test_superposicion_false():
     grado = 0
     inicio = None
     assert prueba == (grado, inicio), "Resultado incorrecto"
+
 
 def test_superposicion_true_tres():
     """

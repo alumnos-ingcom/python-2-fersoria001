@@ -65,5 +65,7 @@ def principal():
     otra = list(input("ingrese otra lista"))
     superpuestos = superposicion(listas, otra)
     print(superpuestos)
+
+
 if __name__ == "__main__":
     principal()

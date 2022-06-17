@@ -14,7 +14,7 @@ def test_sumar():
     Se intentará sumar una secuencia de numeros ingresada y retornar
     un resultado tipo float
     """
-    secuencia = [1,2,10,15]
+    secuencia = [1, 2, 10, 15]
     prueba = sumar(secuencia)
     interno = sum(secuencia)
     assert isinstance(prueba, float), "Tipo incorrecto de resultado"
@@ -26,7 +26,7 @@ def test_promediar():
     Se intentará promediar una secuencia de numeros ingresada y retornar
     un resultado tipo float
     """
-    secuencia = [15,62,-2]
+    secuencia = [15, 62, -2]
     prueba = promediar(secuencia)
     interno = sum(secuencia) / len(secuencia)
     assert isinstance(prueba, float), "Requerimos resultado con decimales"
@@ -49,7 +49,7 @@ def test_es_minimo():
     Se buscará el numero menor de una secuencia de numeros ingresada
     y retornarlo
     """
-    secuencia = [33,91,22,22]
+    secuencia = [33, 91, 22, 22]
     prueba = es_minimo(secuencia)
     interno = min(secuencia)
     assert prueba == interno, "Resultado incorrecto"

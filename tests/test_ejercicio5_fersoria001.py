@@ -66,6 +66,7 @@ def test_balanceados_todos_true():
     assert llamo is True, "Resultado incorrecto"
     assert isinstance(llamo, bool), "Tipo de resultado incorrecto"
 
+
 def test_balanceados_todos_false():
     """
     Probaremos si una cadena tiene sus signos  balanceados

@@ -32,6 +32,7 @@ Hacer que la función verifique el balanceo simultaneo de parentesis,
 llaves y corchetes.
 """
 
+
 def balanceados(cadena, signos):
     """ Esta funcion comprueba si los signos tienen su reciproco
     Precondiciones: Ingresar una cadena de texto y un par o mas de signos
