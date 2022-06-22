@@ -39,15 +39,19 @@ def superposicion(lista, otra_lista):
     j = 0
     car = []
     while i < columnas:
-        if listas[0][i] == listas[1][j]:
-            grado = grado + 1
-            car.append(i)
-            j = j + 1
-            i = i + 1
+        if j < len(lista_menor):
+            if listas[0][i] == listas[1][j]:
+                grado = grado + 1
+                car.append(i)
+                j = j + 1
+                i = i + 1
+            else:
+                i = i + 1
+                j = 0
         else:
-            grado = 0
-            i = i + 1
-            j = 0
+                i = i + 1
+                j = 0
+                
     try:
         inicio = car[0]
     except IndexError as exc:
