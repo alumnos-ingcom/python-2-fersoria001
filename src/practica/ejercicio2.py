@@ -81,7 +81,7 @@ def principal():
     Esta función es la que se encarga de la parte 'interactiva' del
     ejercicio (La entrada, la llamada al algoritmo y la salida)
     """
-    notas = input("ingrese una secuencia de numeros separados: ")
+    notas = input("ingrese una secuencia de numeros separados por espacios: ")
     try:
         notas = notas.split()
         suma = sumar(notas)
